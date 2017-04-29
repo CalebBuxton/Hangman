@@ -74,14 +74,9 @@ button {
 	color: white;
 }
 
-/*.alphabetBtn {
-	font-size: 18px;
-	text-transform: uppercase;
-	outline: none;
-	padding: 10px;
-	width: 20%;
-	margin: 1.66%;
-}*/
+.alphabetBtn {
+	border-radius: 15%;
+}
 
 #letters {
 	width: 20%;
@@ -108,7 +103,7 @@ button {
 }
 
 .wordSpace {
-	
+
 	border-bottom: 2px solid black;
 	width: 10%;
 	display: inline-block;

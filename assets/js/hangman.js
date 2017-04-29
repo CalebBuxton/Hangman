@@ -53,6 +53,7 @@ function createButtons() {
 		alphabetBtn[i].textContent = alphabet[i];
 		alphabetBtn[i].addEventListener("click", function(){
 			this.classList.add("disabledBtn");
+			this.setAttribute("disabled","true");
 			guessedLettersArr.push(this.textContent);
 			guessedLetter();
 			letterSelected(this.textContent);
@@ -64,8 +65,9 @@ function createButtons() {
 	function newGame(){
 		for(var i = 0; i < alphabetBtn.length; i++){
 			alphabetBtn[i].classList.remove("disabledBtn");
-
+			alphabetBtn[i].setAttribute("disabled","false");
 		}
+		alphabetArea.innerHTML = null;
 		resetGame.textContent = "New Word";
 		guessedTitle.textContent = " ";
 		guessedLettersArr = [];
@@ -78,6 +80,7 @@ function createButtons() {
 		correct = 0;
 		gameResult.classList.remove("winner");
 		pickWord();
+		createButtons();
 	};
 
 
@@ -114,14 +117,15 @@ function createButtons() {
 			gameOver = true;
 			winner = true
 		}
-		if (guesses === 6) {
+		if (guesses === pickedWordChars.length) {
 			gameOver = true;
 		}
 		if (gameOver === true) {
 			resetGame.textContent = "Play Again?"
 			gameResult.classList.remove("hidden")
 			for(var i = 0; i < alphabetBtn.length; i++){
-				alphabetBtn[i].classList.add("disabledBtn")
+				alphabetBtn[i].classList.add("disabledBtn");
+				alphabetBtn[i].setAttribute("disabled","true");
 			}
 			if (winner === true) {
 				gameResult.textContent = "You Won!"

@@ -4,6 +4,7 @@ var guessedLettersArr = [];
 var correctLettersArr =[];
 var pickedWord 
 var pickedWordChars
+var hangman = document.getElementById("hangman");
 var alphabetArea = document.getElementById("alphabet");
 var alphabetBtn = document.getElementsByClassName("alphabetBtn");
 var guessedTitle = document.getElementById("guessedTitle");
@@ -92,9 +93,6 @@ function createButtons() {
 
 			if (letter === pickedWordChars[i]) {
 				revealLetter(i, letter);
-				// letterSpaces[i].textContent = letter;
-				// pickedWordChars[i] = "Correct";
-				// correct++;
 			}
 			else {
 				wrong++;
@@ -102,7 +100,7 @@ function createButtons() {
 		}
 		if (wrong === pickedWordChars.length) {
 			guesses++
-
+			hangman.innerHTML = "<img src=" + "assets/images/"+ guesses + ".png>";
 		}
 		gameStatus();
 	};

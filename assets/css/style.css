@@ -101,10 +101,14 @@ button {
 .disabledBtn {
 	cursor: not-allowed;
 	opacity: 0.4;
-	disabled: true;
+}
+
+#wordSpaces {
+	width: 100%;
 }
 
 .wordSpace {
+	
 	border-bottom: 2px solid black;
 	width: 10%;
 	display: inline-block;

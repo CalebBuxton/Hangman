@@ -1,4 +1,4 @@
-var words = ["active", "beyond", "center"]
+var words = ["active", "beyond", "center","alphacatthechampion"]
 var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var guessedLettersArr = [];
 var correctLettersArr =[];
@@ -17,20 +17,15 @@ var letterSpaces
 var guesses
 var correct
 
-init();
+newGame();
 
 resetGame.addEventListener("click", function(){
 	newGame();
 	gameResult.classList.add("hidden");
 })
 
-function init() {
-	createButtons();
-	newGame();
-};
-
 function pickWord() {
-	pickedWord = words[Math.floor(Math.random() * 3)];
+	pickedWord = words[Math.floor(Math.random() * 4)];
 	pickedWordChars = pickedWord.split("");
 	createWordSpaces();
 };
@@ -96,9 +91,10 @@ function createButtons() {
 		for(i = 0; i < pickedWordChars.length; i++) {
 
 			if (letter === pickedWordChars[i]) {
-				letterSpaces[i].textContent = letter;
-				pickedWordChars[i] = "Correct";
-				correct++;
+				revealLetter(i, letter);
+				// letterSpaces[i].textContent = letter;
+				// pickedWordChars[i] = "Correct";
+				// correct++;
 			}
 			else {
 				wrong++;
@@ -111,13 +107,18 @@ function createButtons() {
 		gameStatus();
 	};
 
+	function revealLetter(num, l) {
+		letterSpaces[num].textContent = l;
+		correct++;
+	}
+
 
 	function gameStatus() {
 		if (correct === pickedWordChars.length) {
 			gameOver = true;
 			winner = true
 		}
-		if (guesses === pickedWordChars.length) {
+		if (guesses === 6) {
 			gameOver = true;
 		}
 		if (gameOver === true) {
@@ -132,6 +133,10 @@ function createButtons() {
 				gameResult.classList.add("winner")
 			}
 			else {
+				pickedWordChars = pickedWord.split("");
+				for(var i = 0; i < pickedWordChars.length; i++) {
+					revealLetter(i,pickedWordChars[i]);
+				}
 				gameResult.textContent = "Sorry, you lost..."
 			}
 		}

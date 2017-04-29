@@ -3,25 +3,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hangman</title>
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+	<header><h1>HANGMAN</h1></header>
+	<div id="stripe"><button id="resetGame">New Word</button></div>
 
 	<div class="main">
 		<div class="console">
-		<div id="letters">
-			<div id="alphabet">
-				<h3>Pick a Letter</h3>
-				
-			</div>
-			<div id="guessed">
+		<div id="gameResult" class="hidden"></div>
+			<div id="letters">
+				<div id="alphabet">
+					<h3>Pick a Letter</h3>
+
+				</div>
+				<div id="guessed">
 					<h3 id="guessedTitle"></h3>
 					<div id="guessedLetters"></div>
 				</div>
+			</div>
+			<div id="gameArea">
+				<div id="hangman">
+
 				</div>
-<div id="gameArea">
-			<div id="hangman"></div>
-			<div id="wordSpaces"></div>
+				<div id="wordSpaces">
+
+				</div>
 			</div>
 
 		</div>

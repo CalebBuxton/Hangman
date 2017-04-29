@@ -1,6 +1,17 @@
 .main {
 	margin: 0 auto;
+	width: 100%;
+}
+
+.console {
 	width: 950px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+#gameArea {
+	float: left;
+	width: 70%;
 }
 
 button {
@@ -21,11 +32,40 @@ button {
 	margin: 1.66%;
 }*/
 
-#alphabet {
+#letters {
 	width: 20%;
+	float: left;
+}
+
+#gameArea {
+	width: 70%;
+	float: right;
+}
+
+#alphabet {
+	width: 100%;
 }
 
 .disabledBtn {
 	cursor: not-allowed;
 	opacity: 0.4;
+}
+
+.wordSpace {
+	border-bottom: 2px solid black;
+	width: 10%;
+	display: inline-block;
+	margin: 10px;
+	text-transform: uppercase;
+}
+
+#hangman {
+	width: 100%;
+	height: 500px;
+}
+
+#guessedLetters {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: 700;
 }

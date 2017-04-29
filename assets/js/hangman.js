@@ -75,6 +75,7 @@ function createButtons() {
 		guesses = 0;
 		correct = 0;
 		gameResult.classList.remove("winner");
+		hangman.innerHTML = "<img src=" + "assets/images/"+ guesses + ".png>";
 		pickWord();
 		createButtons();
 	};

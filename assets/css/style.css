@@ -19,7 +19,7 @@ header {
 	background: steelblue;
 	width: 100%;
 	text-align: center;
-	padding: 20px;
+	padding: 20px auto;
 	margin: 0 auto;
 	font-family: 'Amatic SC';
 	font-weight: 700;
